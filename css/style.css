@@ -1,0 +1,778 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: url(../assets/images/background.png);
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 23px 0;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    font-size: 3rem;
+    color: #623c06;
+    text-align: center;
+    margin-top: -15px;
+    line-height: 53px;
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14px;
+    border: 2.5px solid #98731d;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.nav a{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgba(110, 69, 7);
+    cursor: pointer;
+    padding: 14px 20px;
+    border-radius: 8px;
+    
+}
+
+.nav a.active{
+    background-color: #a79d43;
+    color: #ecdcc4e3;
+    border: 2px solid #b39640;
+}
+.nav a:hover{
+    color: #3d3c3c;
+}
+.nav .active:hover{
+    background-color: #a79d43;
+    color: #ecdcc4;
+}
+.navLink{
+    transition: 0.1s;
+}
+/* Arithmetic Calculator */
+
+.arithmeticCal{
+    width: 750px;
+    height: 520px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ecd6a29f;
+    box-shadow: 1px 5px 10px #9b7110be;
+    border: 2.8px solid #986f11d9;
+    margin-bottom: 20px;
+}
+
+h3{
+    font-size: 1.7rem;
+    color: rgba(111, 72, 11);
+    margin-bottom: 15px;  
+}
+
+.arithmeticCal form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.arithmeticCal .display{
+    background-color: rgb(140, 218, 191);
+    border-radius: 10px;
+    width: 90%;
+    height: 80px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.arithmeticCal .display input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    text-align: end;
+    margin-right: 10px;
+    font-size: 2.8rem;
+    margin-top: 20px;
+    box-shadow: none;
+    color: rgba(107, 117, 49);
+}
+
+input{
+    width: 130px;
+    height: 55px;
+    margin: 6px;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    color: #5f3a08;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #edcc7f;
+    border: 2.3px solid #b08c31;
+    box-shadow: 0 1px 3px #9b7110be;
+}
+::placeholder {
+  color: #9f6c29;
+  opacity: 1;
+}
+
+::-ms-input-placeholder {
+  color: #5f3a08;
+}
+input:hover{
+    background-color: #f0d88c;
+}
+
+.equal{
+    width: 278px;
+}
+
+
+
+
+
+/* Geometry Calculator */
+.geometryCal{
+    width: 750px;
+    height: fit-content;
+    padding: 20px;
+    background-color: #ecd6a29f;
+    box-shadow: 1px 5px 10px #9b7110be;
+    border: 2.8px solid #986f11d9;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.geometry{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 19px;
+}
+
+.geometry .left{
+    color: #5e440e;
+    border: 2px solid #9d7f2e;
+}
+
+.geometry .right{
+    h4{
+        color: rgba(111, 72, 11);
+    }
+    p{
+        color: #8e6719;
+    }
+}
+
+.d2 span{
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: -8px;
+    margin-top: 10px;
+}
+
+.d3 span{
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: -8px;
+    margin-top: 10px
+}
+
+
+
+#circleResult{
+    width: 365px;
+    margin-top: 10px;
+    margin-left: 6px;
+    border-radius: 5px;
+    color: #8e6719;
+    border: 2px solid #9d7f2ec3;
+    padding: 5px 10px;
+    height: 70px;
+}
+#circleResult span{
+    font-size: 0.9rem;
+}
+#circleResult .outputValue{
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-left: 10px;
+}
+
+#calculationType, 
+#calculationTypeSquare, 
+#calculationTypeRect,
+#calculationTypeCube, 
+#calculationTypeSphere, 
+#calculationTypeCyl{
+    width: 350px;
+    height: 40px;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid #9d7f2ed1;
+    margin-left: 10px;
+    background-color: transparent;
+    outline: none;
+    color: #5c410d;
+}
+
+option{
+    color: #5c410d;
+}
+.circleValues{
+    display: flex;
+    gap: 12spx;
+    margin-top: 7px;
+}
+.radius #radius{
+    width: 170px;
+}
+
+.pi #pi{
+    width: 170px;
+}
+
+.cal{
+    width: 365px;
+    height: 50px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #a79d43;
+    color: #ecdcc4e3;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.cal:hover{
+    background-color: #428ad7;
+}
+
+.fd{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.formula{
+    width: fit-content;
+    margin-top: 10px;
+    color: #5c410d;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid #9d7f2ed1;
+    padding: 8px 12px;
+    border-radius: 5px;
+    
+}
+.formula span{
+    font-weight: 600;
+}
+#formulaDisplay,
+#formulaDisplaySquare,
+#formulaDisplayRect,
+#formulaDisplayCube,
+#formulaDisplaySphere,
+#formulaDisplayCyl{
+    font-size: 1.6rem;
+}
+
+
+.circleCalculator{
+    h4{
+        margin-bottom: -5px;
+    }
+    display: none;
+}
+
+.squareCalculator{
+    h4{
+        margin-bottom: -5px;
+    }
+    display: none;
+}
+
+.rectangleCalculator{
+    h4{
+        margin-bottom: -5px;
+    }
+    .rectangleValues{
+        display: flex;
+        gap: 12px;
+        margin-top: 7px;
+    }
+    display: none;
+}
+
+.cubeCalculator{
+    h4{
+        margin-bottom: -5px;
+    }
+    display: none;
+}
+
+.sphereCalculator{
+    h4{
+        margin-bottom: -5px;
+    }
+    .sphereValues{
+        display: flex;
+        margin-top: 7px;
+    }
+   display: none;
+}
+
+.cylinderCalculator{
+    h4{
+        margin-bottom: -5px;
+    }
+    .cylinderValues{
+        display: flex;
+        gap: 12px;
+        margin-top: 7px;
+    }
+    #height{
+        width: 170px;
+    }
+    display: none;
+}
+
+
+
+
+
+
+/* Unit Converter */
+.unitConverter{
+    width: 750px;
+    height: 520px;
+    padding: 20px;
+    background-color: #ecd6a29f;
+    box-shadow: 1px 5px 10px #9b7110be;
+    border: 2.8px solid #986f11d9;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+
+.unitConverterCal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.left{
+    margin-left: 10px;
+    height: 424px;
+    /* width: 280px; */
+    color: #5e440e;
+    border: 2px solid #9d7f2e;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.left a{
+    width: 115px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #9d7f2e;
+    margin: 24px 12px;
+    border-radius: 17px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.l1 a{
+    transition: 0.1s;
+    margin: 30px 12px;
+}
+.l2 a{
+    transition: 0.1s;
+    margin: 30px 12px;
+}
+    
+
+.right{
+    flex: 1;
+    border: 2px solid #9d7f2e;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+h4{
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;  
+}
+.right p{
+    font-size: 1.2rem;
+    color: #8e6719;
+    margin-top: 5px;
+    margin-left: 5px;  
+    font-weight: 600;
+}
+.right input{
+    width: 95%;
+    height: 40px;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    margin-bottom: 7px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid #9d7f2ec3;
+    box-shadow: none;
+    outline: none;
+}
+#unitSelect, #unitSelectSphere, #unitSelectCube, #unitSelectRect, #unitSelectCyl, #unitSelectSquare{
+    width: 55px;
+    height: 40px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid #9d7f2ec3;
+    outline: none;
+    color: #5c410d;
+    background-color: transparent;
+}
+
+.right .units{
+    display: flex;
+    gap: 20px;
+}
+
+.fromTo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.fromTo select{
+    width: 250px;
+    height: 40px;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #5c410d;
+    background-color: transparent;
+    border: 2px solid #9d7f2ec3;
+    margin-left: 5px;
+    outline: none;
+}
+.units button{
+    width: 100%;
+    height: 128px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #a79d43;
+    color: #ecdcc4e3;
+    margin-top: 40px;
+}
+.units button:hover{
+    background-color: #428ad7;
+}
+#result{
+    width: 95%;
+    margin-top: 23px;
+    margin-bottom: 10px;
+    margin-left: 6px;
+    border-radius: 5px;
+    color: #5c410d;
+    border: 2px solid #9d7f2ec3;
+    padding: 5px 10px;
+    height: 83px;
+}
+#result span{
+    font-size: 0.9rem;
+}
+.outputCircle, .outputSquare, .outputRect, .outputCube, .outputSphere, .outputCyl{
+    font-size: 1.2rem !important;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-left: 10px;
+    
+}
+
+.weight{
+    display: none;
+}
+
+.time{
+    display: none;
+}
+
+.temperature{
+    display: none;
+}
+
+.volume{
+    display: none;
+}
+
+.currency{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 767px) {
+    header{
+        padding: 4vw 0 5vw 0;
+    }
+    header h1{
+        font-size: 2.2rem;
+        line-height: 2rem;
+        margin: 0 6vw
+    }
+    .arithmeticCal {
+        width: 95vw;
+        height: fit-content;
+    }
+    .arithmeticCal h3{
+        text-align: center;
+        font-size: 6vw;
+    }
+    form input{
+        width: 18vw;
+        margin: 5px 0.1vw;
+    }
+    form .equal{
+        width: 38vw;
+    }
+    .nav{
+        margin-top: 3.1vw;
+        margin-bottom: 0.1vw;
+        padding: 1vw;
+    }
+    .nav a{
+        font-size: 3vw;
+        padding: 2vw;
+    }
+    
+
+    .geometryCal {
+        width: 95vw;
+        height: fit-content;
+    }
+    .geometry {
+        flex-direction: column;
+    }
+    .geometry .left{
+        flex-direction: row;
+        height: 16.5vw;
+        width: 83vw;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        scrollbar-width: none;
+        margin-left: -10px;
+    }
+    .left .d2{
+        display: flex;   
+        span{
+            font-size: 2.5vw;
+        } 
+    }
+    .geometry .left .d3{
+        display: flex;    
+        span{
+            font-size: 2.5vw;
+        }
+    }
+    .geometry .left .d{
+            display: none;
+    }
+    .geometry .left a{
+        width: 16vw;
+        height: 14vw;
+        margin: 1.2vw;
+        border-radius: 2vw;
+    }
+    .geometryCal h3{
+        text-align: center;
+        font-size: 6vw;
+    }
+   
+    .img1, .img2, .img4, .img5, .img6{
+        width: 10vw !important;
+        height: 10vw !important;
+        margin-top: -0.9vw;
+    }
+    .img3{
+        width: 12vw !important;
+        height: 10vw !important;
+        margin-top: -0.9vw;
+    }
+    .geometry .right{
+        width: 84vw;
+        h4{
+            font-size: 5vw;
+            text-align: center;
+        }
+        p{
+            font-size: 3.5vw;
+            font-weight: 600;
+        }
+        input{
+            width: 96%;
+            height: 7vw;
+            font-size: 3vw;
+        }
+        .cal {
+            width: 98%;
+            height: 10vw;
+            font-size: 5vw;
+            margin-top: 2vw;
+        }
+    }
+    #circleResult span {
+        font-size: 3.5vw;
+    }
+    #calculationType, #calculationTypeSquare, #calculationTypeRect, #calculationTypeCube, #calculationTypeSphere, #calculationTypeCyl {
+        width: 99%;
+        margin: auto;
+        font-size: 3.5vw;
+        height: 8vw;
+    }
+    #formulaDisplay, #formulaDisplaySquare, #formulaDisplayRect, #formulaDisplayCube, #formulaDisplaySphere, #formulaDisplayCyl {
+        font-size: 5vw;
+    }
+    .formula span {
+        font-size: 3vw;
+    }
+    #circleResult {
+        width: 98%;
+    }
+
+
+    .unitConverter{
+        width: 95vw;
+        height: fit-content;
+    }
+    .unitConverterCal{
+        flex-direction: column;
+    }
+    .unitConverterCal .left{
+        flex-direction: row;
+        height: 16.5vw;
+        width: 83vw;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        scrollbar-width: none;
+        margin-left: -10px;
+    }
+    .unitConverterCal .left a{
+        width: 18vw;
+        height: 14vw;
+        margin: 1vw;
+        border-radius: 2vw;
+        span{
+            font-size: 2.5vw;
+        }
+    }
+    .unitConverter h3{
+        text-align: center;
+        font-size: 4.4vw;
+    }
+    .img7, .img8, .img9, .img10, .img11, .img12{
+        width: 10vw !important;
+        height: 8vw !important;
+    }
+    .l1, .l2{
+        display: flex;
+    }
+
+    .unitConverterCal .right{
+        width: 84vw;
+        h4{
+            font-size: 5vw;
+            text-align: center;
+        }
+        p{
+            font-size: 3vw;
+        }
+        input{
+            width: 96%;
+            height: 7vw;
+            font-size: 3vw;
+        }
+        .cal {
+            width: 98%;
+            height: 10vw;
+            font-size: 5vw;
+        }
+    }
+    .fromTo select {
+        width: 52vw;
+        height: 8vw;
+        font-size: 3vw;
+    }
+    .fromTo{
+        gap: 1vw;
+    }
+    .units button {
+        width: 20vw;
+        height: 24vw;
+        margin-top: 6.5vw;
+        font-size: 3vw;
+    }
+    .right .units {
+        gap: 5vw;
+    }
+    .right input{
+        margin-bottom: 0vw;
+    }
+    #result .outputValue {
+        font-size: 4vw;
+    }
+}

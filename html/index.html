@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All In One Calculator</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        All In One <br />
+        Calculator
+      </h1>
+      <div class="nav">
+        <a class="navLink active arithmeticLink">Arithmetic</a>
+        <a class="navLink geometryLink">Geometry</a>
+        <a class="navLink unitLink">Unit Converter</a>
+      </div>
+    </header>
+    <div class="container">
+      <!-- Arithmetic Calculator -->
+      <div class="arithmeticCal">
+        <h3>Arithmetic Calculator</h3>
+        <form>
+          <div class="display">
+            <input type="text" name="display" placeholder="0" disabled />
+          </div>
+          <div>
+            <input type="button" value="AC" onclick="display.value = '' " />
+            <input
+              type="button"
+              value="DE"
+              onclick="display.value = display.value.toString().slice(0,-1) "
+            />
+            <input type="button" value="%" onclick="display.value += '%' " />
+            <input type="button" value="/" onclick="display.value += '/' " />
+          </div>
+          <div>
+            <input type="button" value="7" onclick="display.value += '7' " />
+            <input type="button" value="8" onclick="display.value += '8' " />
+            <input type="button" value="9" onclick="display.value += '9' " />
+            <input type="button" value="*" onclick="display.value += '*' " />
+          </div>
+          <div>
+            <input type="button" value="4" onclick="display.value += '4' " />
+            <input type="button" value="5" onclick="display.value += '5' " />
+            <input type="button" value="6" onclick="display.value += '6' " />
+            <input type="button" value="-" onclick="display.value += '-' " />
+          </div>
+          <div>
+            <input type="button" value="1" onclick="display.value += '1' " />
+            <input type="button" value="2" onclick="display.value += '2' " />
+            <input type="button" value="3" onclick="display.value += '3' " />
+            <input type="button" value="+" onclick="display.value += '+' " />
+          </div>
+          <div>
+            <input type="button" value="0" onclick="display.value += '0' " />
+            <input type="button" value="." onclick="display.value += '.' " />
+            <input
+              type="button"
+              value="="
+              class="equal"
+              onclick="display.value = eval(display.value)"
+            />
+          </div>
+        </form>
+      </div>
+
+      <!-- Geometry Calculator -->
+      <div class="geometryCal">
+        <h3>Geometry Calculator</h3>
+        <div class="geometry">
+          <div class="left">
+            <div class="d2">
+              <span class="d">2D</span>
+              <a class="geoLink active2 circleLink"
+                ><img
+                  class="img1"
+                  src="../assets/images/circle.png"
+                  style="width: 60px"
+                  alt=""
+                />
+                <span style="margin-top: -3px">Circle</span>
+              </a>
+              <a class="geoLink squareLink"
+                ><img
+                  class="img2"
+                  src="../assets/images/square.png"
+                  style="width: 60px"
+                  alt=""
+                />
+                <span style="margin-top: -3px">Square</span></a
+              >
+              <a class="geoLink rectangleLink"
+                ><img
+                  class="img3"
+                  src="../assets/images/rectagle.png"
+                  style="width: 70px; height: 55px"
+                  alt=""
+                />
+                <span style="margin-top: -3px">Rectangle</span></a
+              >
+            </div>
+            <div class="d3">
+              <span class="d">3D</span>
+              <a class="geoLink cubeLink"
+                ><img
+                  class="img4"
+                  src="../assets/images/cube.png"
+                  style="width: 60px"
+                  alt=""
+                />
+                <span style="margin-top: -2px">Cube</span></a
+              >
+              <a class="geoLink sphereLink"
+                ><img
+                  class="img5"
+                  src="../assets/images/sphere.png"
+                  style="width: 60px"
+                  alt=""
+                />
+                <span style="margin-top: -3px">Sphere</span></a
+              >
+              <a class="geoLink cylinderLink"
+                ><img
+                  class="img6"
+                  src="../assets/images/cylinder.png"
+                  style="width: 60px; height: 60px"
+                  alt=""
+                />
+                <span style="margin-top: -3px">Cylinder</span></a
+              >
+            </div>
+          </div>
+
+          <!-- ================== Circle Calculator ================== -->
+          <div class="right circleCalculator" id="circleCalculator">
+            <h4>Circle Calculator</h4>
+            <p>Measurement Type</p>
+            <select id="calculationType">
+              <option value="A">Area</option>
+              <option value="P">Perimeter</option>
+            </select>
+            <div class="fd">
+              <div class="formula">
+                <span>Formula:</span>
+                <p id="formulaDisplay">A = 2&pi;r&sup2;</p>
+              </div>
+            </div>
+            <div class="circle">
+              <div class="circleValues">
+                <div class="radius">
+                  <p>Radius (r)</p>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin-bottom: 1px;
+                    "
+                  >
+                    <input type="number" id="circleRadius" placeholder="0" />
+                    <select id="unitSelect">
+                      <option value="mm">mm</option>
+                      <option value="cm">cm</option>
+                      <option value="m">m</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="pi">
+                  <p>Pi (&pi;)</p>
+                  <input id="circlePi" placeholder="3.14159" disabled />
+                </div>
+              </div>
+              <button
+                class="cal"
+                id="calculateCircle"
+                onclick="circleCalculate()"
+              >
+                Calculate
+              </button>
+              <div id="circleResult">
+                <span>Result</span>
+                <p class="outputCircle"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================== Square Calculator ================== -->
+          <div class="right squareCalculator">
+            <h4>Square Calculator</h4>
+            <p>Measurement Type</p>
+            <select id="calculationTypeSquare">
+              <option value="A">Area</option>
+              <option value="P">Perimeter</option>
+            </select>
+            <div class="fd">
+              <div class="formula">
+                <span>Formula:</span>
+                <p id="formulaDisplaySquare">A = a&sup2;</p>
+              </div>
+            </div>
+            <div class="square">
+              <div class="squareValues">
+                <div class="side">
+                  <p>Side (a)</p>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin-bottom: 1px;
+                      margin-right: 10px;
+                    "
+                  >
+                    <input type="number" id="squareSide" placeholder="0" />
+                    <select id="unitSelectSquare">
+                      <option value="mm">mm</option>
+                      <option value="cm">cm</option>
+                      <option value="m">m</option>
+                      <option value="inch">inch</option>
+                      <option value="foot">foot</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="cal"
+                id="calculateSquare"
+                onclick="calculateSquare()"
+              >
+                Calculate
+              </button>
+              <div id="circleResult">
+                <span>Result</span>
+                <p class="outputSquare"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================== Rectangle Calculator ================== -->
+          <div class="right rectangleCalculator">
+            <h4>Rectangle Calculator</h4>
+            <p>Measurement Type</p>
+            <select id="calculationTypeRect">
+              <option value="A">Area</option>
+              <option value="P">Perimeter</option>
+            </select>
+            <div class="fd">
+              <div class="formula">
+                <span>Formula:</span>
+                <p id="formulaDisplayRect">A = l x b</p>
+              </div>
+            </div>
+            <div class="rectangle">
+              <div class="rectangleValues">
+                <div class="length">
+                  <p>Length (l)</p>
+                  <input type="number" id="rectangleLength" placeholder="0" />
+                </div>
+                <div class="breadth">
+                  <p>Breadth (b)</p>
+                  <input type="number" id="rectangleBreadth" placeholder="0" />
+                </div>
+              </div>
+              <button
+                class="cal"
+                id="calculateRectangle"
+                onclick="calculateRectangle()"
+              >
+                Calculate
+              </button>
+              <div id="circleResult">
+                <span>Result</span>
+                <p class="outputRectangle"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================== Cube Calculator ================== -->
+          <div class="right cubeCalculator">
+            <h4>Cube Calculator</h4>
+            <p>Measurement Type</p>
+            <select id="calculationTypeCube">
+              <option value="LSA">Lateral Surface Area (LSA)</option>
+              <option value="TSA">Total Surface Area (TSA)</option>
+              <option value="V">Volume (V)</option>
+            </select>
+            <div class="fd">
+              <div class="formula">
+                <span>Formula:</span>
+                <p id="formulaDisplayCube">LSA = 4 x a&sup2;</p>
+              </div>
+            </div>
+            <div class="cube">
+              <div class="cubeValues">
+                <div class="side">
+                  <p>Side (a)</p>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin-bottom: 1px;
+                      margin-right: 10px;
+                    "
+                  >
+                    <input type="number" id="cubeSide" placeholder="0" />
+                    <select id="unitSelectCube">
+                      <option value="mm">mm</option>
+                      <option value="cm">cm</option>
+                      <option value="m">m</option>
+                      <option value="inch">inch</option>
+                      <option value="foot">foot</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <button class="cal" id="calculateCube" onclick="calculateCube()">
+                Calculate
+              </button>
+              <div id="circleResult">
+                <span>Result</span>
+                <p class="outputCube"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================== Sphere Calculator ================== -->
+          <div class="right sphereCalculator">
+            <h4>Sphere Calculator</h4>
+            <p>Measurement Type</p>
+            <select id="calculationTypeSphere">
+              <option value="SA">Surface Area (SA)</option>
+              <option value="V">Volume (V)</option>
+            </select>
+            <div class="fd">
+              <div class="formula">
+                <span>Formula:</span>
+                <p id="formulaDisplaySphere">SA = 4 x &pi; x r&sup2;</p>
+              </div>
+            </div>
+            <div class="sphere">
+              <div class="sphereValues">
+                <div class="radius">
+                  <p>Radius (r)</p>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin-bottom: 1px;
+                    "
+                  >
+                    <input type="number" id="sphereRadius" placeholder="0" />
+                    <select id="unitSelectSphere">
+                      <option value="mm">mm</option>
+                      <option value="cm">cm</option>
+                      <option value="m">m</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="pi">
+                  <p>Pi (&pi;)</p>
+                  <input id="spherePi" placeholder="3.14159" disabled />
+                </div>
+              </div>
+              <button
+                class="cal"
+                id="calculateSphere"
+                onclick="calculateSphere()"
+              >
+                Calculate
+              </button>
+              <div id="circleResult">
+                <span>Result</span>
+                <p class="outputSphere"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================== Cylinder Calculator ================== -->
+          <div class="right cylinderCalculator">
+            <h4>Cylinder Calculator</h4>
+            <p>Measurement Type</p>
+            <select id="calculationTypeCyl">
+              <option value="LSA">Lateral Surface Area (LSA)</option>
+              <option value="TSA">Total Surface Area (TSA)</option>
+              <option value="V">Volume (V)</option>
+            </select>
+            <div class="fd">
+              <div class="formula">
+                <span>Formula:</span>
+                <p id="formulaDisplayCyl">TSA = 2&pi;rh + 2&pi;r&sup2;</p>
+              </div>
+            </div>
+
+            <div class="cylinder">
+              <div class="cylinderValues">
+                <div class="radius">
+                  <p>Radius (r)</p>
+                  <input type="number" id="cylinderRadius" placeholder="0" />
+                </div>
+                <div class="height">
+                  <p>Height (h)</p>
+                  <input type="number" id="cylinderHeight" placeholder="0" />
+                </div>
+              </div>
+              <button
+                class="cal"
+                id="calculateCylinder"
+                onclick="calculateCylinder()"
+              >
+                Calculate
+              </button>
+              <div id="circleResult">
+                <span>Result</span>
+                <p class="outputCylinder"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="unitConverter">
+        <h3>Unit Converter</h3>
+        <div class="unitConverterCal">
+          <div class="left">
+            <div class="l1">
+              <a class="unitLink active1 lengthLink"
+                ><img
+                  class="img7"
+                  src="../assets/images/length.png"
+                  style="width: 90px"
+                  alt=""
+                /><span>Length</span></a
+              >
+              <a class="unitLink weightLink"
+                ><img
+                  class="img8"
+                  src="../assets/images/weight.png"
+                  style="width: 90px"
+                  alt=""
+                /><span>Weight</span></a
+              >
+              <a class="unitLink timeLink"
+                ><img
+                  class="img9"
+                  src="../assets/images/time.png"
+                  style="width: 60px"
+                  alt=""
+                /><span>Time</span></a
+              >
+            </div>
+
+            <div class="l2">
+              <a class="unitLink temperatureLink"
+                ><img
+                  class="img10"
+                  src="../assets/images/temp.png"
+                  style="width: 60px"
+                  alt=""
+                /><span>Temperature</span></a
+              >
+              <a class="unitLink volumeLink"
+                ><img
+                  class="img11"
+                  src="../assets/images/volume.png"
+                  style="width: 60px"
+                  alt=""
+                /><span>Volume</span></a
+              >
+              <a class="unitLink currencyLink"
+                ><img
+                  class="img12"
+                  src="../assets/images/currency.png"
+                  style="width: 40px"
+                  alt=""
+                /><span>Currency</span></a
+              >
+            </div>
+          </div>
+
+          <div class="right length" id="Length">
+            <h4>Length Converter</h4>
+            <p>Value to Convert</p>
+            <input type="number" id="inputValue" placeholder="0" />
+            <div class="units">
+              <div class="fromTo">
+                <p>From</p>
+                <select id="from">
+                  <option value="m">Meter</option>
+                  <option value="km">Kilometer</option>
+                  <option value="cm">Centimeter</option>
+                  <option value="mm">Millimeter</option>
+                </select>
+                <p>To</p>
+                <select id="to">
+                  <option value="km">Kilometer</option>
+                  <option value="cm">Centimeter</option>
+                  <option value="mm">Millimeter</option>
+                  <option value="m">Meter</option>
+                </select>
+              </div>
+              <button id="convert" onclick="convertLength()">Convert</button>
+            </div>
+
+            <div id="result">
+              <span>Result</span>
+              <p class="outputValue outputLength"></p>
+            </div>
+          </div>
+
+          <div class="right weight">
+            <h4>Weight Converter</h4>
+            <p>Value to Convert</p>
+            <input type="number" id="inputWeight" placeholder="0" />
+            <div class="units">
+              <div class="fromTo">
+                <p>From</p>
+                <select id="fromWeight">
+                  <option value="g">Gram</option>
+                  <option value="kg">Kilogram</option>
+                  <option value="mg">Milligram</option>
+                </select>
+                <p>To</p>
+                <select id="toWeight">
+                  <option value="kg">Kilogram</option>
+                  <option value="mg">Milligram</option>
+                  <option value="g">Gram</option>
+                </select>
+              </div>
+              <button id="convert" onclick="convertWeight()">Convert</button>
+            </div>
+
+            <div id="result">
+              <span>Result</span>
+              <p class="outputValue outputWeight"></p>
+            </div>
+          </div>
+
+          <div class="right time">
+            <h4>Time Converter</h4>
+            <p>Value to Convert</p>
+            <input type="number" id="inputTime" placeholder="0" />
+            <div class="units">
+              <div class="fromTo">
+                <p>From</p>
+                <select id="fromTime">
+                  <option value="sec">Second</option>
+                  <option value="min">Minute</option>
+                  <option value="hr">Hour</option>
+                </select>
+                <p>To</p>
+                <select id="toTime">
+                  <option value="min">Minute</option>
+                  <option value="hr">Hour</option>
+                  <option value="sec">Second</option>
+                </select>
+              </div>
+              <button id="convert" onclick="convertTime()">Convert</button>
+            </div>
+
+            <div id="result">
+              <span>Result</span>
+              <p class="outputValue outputTime"></p>
+            </div>
+          </div>
+
+          <div class="right temperature">
+            <h4>Temperature Converter</h4>
+            <p>Value to Convert</p>
+            <input type="number" id="inputTemp" placeholder="0" />
+            <div class="units">
+              <div class="fromTo">
+                <p>From</p>
+                <select id="fromTemp">
+                  <option value="C">Celsius</option>
+                  <option value="F">Fahrenheit</option>
+                  <option value="K">Kelvin</option>
+                </select>
+                <p>To</p>
+                <select id="toTemp">
+                  <option value="F">Fahrenheit</option>
+                  <option value="K">Kelvin</option>
+                  <option value="C">Celsius</option>
+                </select>
+              </div>
+              <button id="convert" onclick="convertTemperature()">
+                Convert
+              </button>
+            </div>
+
+            <div id="result">
+              <span>Result</span>
+              <p class="outputValue outputTemperature"></p>
+            </div>
+          </div>
+
+          <div class="right volume">
+            <h4>Volume Converter</h4>
+            <p>Value to Convert</p>
+            <input type="number" id="inputVolume" placeholder="0" />
+            <div class="units">
+              <div class="fromTo">
+                <p>From</p>
+                <select id="fromVolume">
+                  <option value="liter">Liter</option>
+                  <option value="milliliter">Milliliter</option>
+                </select>
+                <p>To</p>
+                <select id="toVolume">
+                  <option value="milliliter">Milliliter</option>
+                  <option value="liter">Liter</option>
+                </select>
+              </div>
+              <button id="convert" onclick="convertVolume()">Convert</button>
+            </div>
+
+            <div id="result">
+              <span>Result</span>
+              <p class="outputValue outputVolume"></p>
+            </div>
+          </div>
+
+          <div class="right currency">
+            <h4>Currency Converter</h4>
+            <p>Value to Convert</p>
+            <input type="number" id="inputCurrency" placeholder="0" />
+            <div class="units">
+              <div class="fromTo">
+                <p>From</p>
+                <select id="fromCu">
+                  <option value="usd">USD</option>
+                  <option value="eur">EUR</option>
+                  <option value="gbp">GBP</option>
+                  <option value="inr">INR</option>
+                </select>
+                <p>To</p>
+                <select id="toCu">
+                  <option value="eur">EUR</option>
+                  <option value="gbp">GBP</option>
+                  <option value="inr">INR</option>
+                  <option value="usd">USD</option>
+                </select>
+              </div>
+              <button id="convert" onclick="convertCurrency()">Convert</button>
+            </div>
+
+            <div id="result">
+              <span>Result</span>
+              <p class="outputValue outputCurrency"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../javascript/main.js"></script>
+  </body>
+</html>
