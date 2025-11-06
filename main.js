@@ -291,7 +291,7 @@ function calculateCylinder() {
   const type = calculationTypeCyl.value;
 
   if (isNaN(r) || r <= 0 || isNaN(h) || h <= 0) {
-    outputCylinder.textContent = "Please enter valid radius and height.";
+    outputCylinder.textContent = "Please enter valid value";
     return;
   }
 

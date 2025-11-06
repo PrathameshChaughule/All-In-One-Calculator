@@ -38,6 +38,7 @@ h1{
     border: 2.5px solid #98731d;
     border-radius: 10px;
     background-color: transparent;
+    padding: 4px;
 }
 
 .nav a{
@@ -160,7 +161,6 @@ input:hover{
     justify-content: center;
     align-items: center;
     display: none;
-    margin-bottom: 20px;
 }
 
 .geometry{
@@ -277,7 +277,8 @@ option{
 }
 
 .cal:hover{
-    background-color: #428ad7;
+    background-color: #a79d43;
+    color: #ecdcc4e3;
 }
 
 .fd{
@@ -509,7 +510,8 @@ h4{
     margin-top: 40px;
 }
 .units button:hover{
-    background-color: #428ad7;
+    background-color: #a79d43;
+    color: #ecdcc4e3;
 }
 #result{
     width: 95%;
@@ -609,6 +611,7 @@ h4{
     }
     .geometry {
         flex-direction: column;
+        margin-bottom: 20px;
     }
     .geometry .left{
         flex-direction: row;
@@ -645,6 +648,12 @@ h4{
         font-size: 6vw;
     }
    
+    #unitSelect, #unitSelectSphere, #unitSelectCube, #unitSelectRect, #unitSelectCyl, #unitSelectSquare{
+        height: 7vw;
+        font-size: 3vw;
+        width: 14vw;
+        margin-top: 1.3vw;
+    }
     .img1, .img2, .img4, .img5, .img6{
         width: 10vw !important;
         height: 10vw !important;
@@ -695,6 +704,9 @@ h4{
     #circleResult {
         width: 98%;
     }
+    .outputCircle, .outputSquare, .outputRect, .outputCube, .outputSphere, .outputCyl{
+        font-size: 4vw !important;
+    }
 
 
     .unitConverter{
@@ -739,6 +751,7 @@ h4{
         h4{
             font-size: 5vw;
             text-align: center;
+            color: rgba(111, 72, 11);
         }
         p{
             font-size: 3vw;
